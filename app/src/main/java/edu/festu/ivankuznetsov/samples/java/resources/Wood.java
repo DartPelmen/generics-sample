@@ -1,0 +1,14 @@
+package edu.festu.ivankuznetsov.samples.java.resources;
+
+public class Wood extends Resource implements Sellable{
+    private String woodType;
+
+    @Override
+    public Double getTradeCost() {
+        return switch (this.resourceType){
+            case USUAL -> basicCost*0.5;
+            case RARE -> basicCost*1.2;
+            case MAGIC -> basicCost*4;
+        };
+    }
+}
