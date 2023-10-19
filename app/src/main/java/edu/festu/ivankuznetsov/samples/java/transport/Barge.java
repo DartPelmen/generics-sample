@@ -1,5 +1,7 @@
 package edu.festu.ivankuznetsov.samples.java.transport;
 
-public class Barge extends Ship{
+import edu.festu.ivankuznetsov.samples.java.resources.Resource;
+
+public class Barge extends Ship<Resource> {
 
 }

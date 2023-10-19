@@ -3,6 +3,15 @@ package edu.festu.ivankuznetsov.samples.java.resources;
 public class Resource {
     protected String name;
     protected Double basicCost;
+
+    public ResourceType getResourceType() {
+        return resourceType;
+    }
+
+    public void setResourceType(ResourceType resourceType) {
+        this.resourceType = resourceType;
+    }
+
     protected ResourceType resourceType;
 
     public String getName() {

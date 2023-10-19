@@ -2,25 +2,31 @@ package edu.festu.ivankuznetsov.samples.java.transport;
 
 import java.util.List;
 
-public abstract class Ship<T> {
-    private String name;
-    private Float speed;
-    private List<T> transportingObject;
-    void load(List<T> transportingObject){
-        //здесь должны быть методы для вызова анимаций!
-        setTransportingObject(transportingObject);
+
+public class Ship<T>{
+    protected String name;
+    protected Float speed;
+
+    protected List<T> transportingObjects;
+
+    public void load(List<T> transportingObjects){
+        //здесь должна быть анимация
+        setTransportingObjects(transportingObjects);
     }
-    private void setTransportingObject(List<T> transportingObject){
-        this.transportingObject = transportingObject;
+    public List<T> unload(){
+        //здесь должна быть анимация
+        var transportingObjects = getTransportingObjects();
+        this.transportingObjects.clear();
+        return transportingObjects;
+    }
+    public List<T> getTransportingObjects() {
+        return transportingObjects;
     }
 
-    public List<T> unload(){
-     //здесь должны быть анимации!
-     return getTransportingObject();
+    public void setTransportingObjects(List<T> transportingObjects) {
+        this.transportingObjects = transportingObjects;
     }
-    public List<T> getTransportingObject() {
-        return transportingObject;
-    }
+
 
     public String getName() {
         return name;
@@ -37,5 +43,4 @@ public abstract class Ship<T> {
     public void setSpeed(Float speed) {
         this.speed = speed;
     }
-
 }
